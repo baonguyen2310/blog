@@ -1,5 +1,3 @@
-'use client';
-
 import Image from "next/image";
 import Link from "next/link";
 import Container from "@/components/container";
@@ -10,8 +8,6 @@ import { parseISO, format } from "date-fns";
 
 import CategoryLabel from "@/components/blog/category";
 import AuthorCard from "@/components/blog/authorCard";
-
-import Comments from "./comments";
 
 export default function Post(props) {
   const { loading, post } = props;
@@ -106,7 +102,6 @@ export default function Post(props) {
             </Link>
           </div>
           {post.author && <AuthorCard author={post.author} />}
-          <Comments post={{id: post._id, title: post.title}} />
         </article>
       </Container>
     </>
