@@ -13,34 +13,35 @@ import { myLoader } from "@/utils/all";
 export default function Navbar(props) {
   const leftmenu = [
     {
-      label: "Home",
+      label: "Trang chủ",
       href: "/"
     },
     {
-      label: "About",
+      label: "Bảng vàng DFO",
       href: "/about"
     },
     {
-      label: "Contact",
-      href: "/contact"
-    }
+      label: "Thành viên",
+      href: "https://stablo-pro.web3templates.com/",
+      external: true,
+      
+    },
   ];
 
   const rightmenu = [
     {
-      label: "Archive",
-      href: "/archive"
+      label: "Bài viết",
+      href: "/archive",
+      // badge: "new"
     },
     {
-      label: "Pro Version",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
-      badge: "new"
-    },
-    {
-      label: "Download",
+      label: "DFO Summer Camp",
       href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true
+      external: true,
+    },
+    {
+      label: "Liên hệ",
+      href: "/contact"
     }
   ];
 
@@ -66,7 +67,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-white"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           {item.label}
@@ -77,16 +78,20 @@ export default function Navbar(props) {
                 </div>
                 <div className="flex w-full items-center justify-between md:w-auto">
                   <Link href="/" className="w-28 dark:hidden">
+                    {/* <span className="block text-center font-oswald">
+                      DFO
+                    </span> */}
                     {props.logo ? (
                       <Image
                         {...urlForImage(props.logo)}
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
+                        className="logo-circle"
                       />
                     ) : (
                       <span className="block text-center">
-                        Stablo
+                        DFO
                       </span>
                     )}
                   </Link>
@@ -97,6 +102,7 @@ export default function Navbar(props) {
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
+                        className="logo-circle"
                       />
                     ) : (
                       <span className="block text-center">
@@ -141,7 +147,7 @@ export default function Navbar(props) {
                         <Link
                           href={item.href}
                           key={`${item.label}${index}`}
-                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400"
+                          className="px-5 py-2 text-sm font-medium text-gray-600 hover:text-blue-500 dark:text-gray-400 dark:hover:text-white"
                           target={item.external ? "_blank" : ""}
                           rel={item.external ? "noopener" : ""}>
                           <span> {item.label}</span>

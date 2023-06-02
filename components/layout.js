@@ -55,6 +55,10 @@ export default function Layout(props) {
           <Navbar {...props} />
         )}
 
+        {/* <div className="mt-2 flex items-center justify-between">
+          <ThemeSwitch />
+        </div> */}
+
         <div>{children}</div>
 
         <Footer {...props} />

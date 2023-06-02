@@ -3,6 +3,9 @@ import Footer from "@/components/footer";
 import { urlForImage } from "@/lib/sanity/image";
 import Navbar from "@/components/navbar";
 
+import ThemeSwitch from "@/components/themeSwitch";
+import { SWRConfig } from "swr/_internal";
+
 export async function sharedMetaData(params) {
   const settings = await getSettings();
 
@@ -51,6 +54,7 @@ export default async function Layout({ children, params }) {
   return (
     <>
       <Navbar {...settings} />
+      {/* <ThemeSwitch /> */}
 
       <div>{children}</div>
 

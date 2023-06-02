@@ -89,6 +89,7 @@ export default function NavbarAlt(props) {
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
+                        className="logo-circle"
                       />
                     ) : (
                       <span className="block text-center">
@@ -103,6 +104,7 @@ export default function NavbarAlt(props) {
                         alt="Logo"
                         priority={true}
                         sizes="(max-width: 640px) 100vw, 200px"
+                        className="logo-circle"
                       />
                     ) : (
                       <span className="block text-center">
