@@ -12,7 +12,8 @@ import {
   postsbycatquery,
   catpathquery,
   catquery,
-  searchquery
+  searchquery,
+  authorslugquery
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -119,3 +120,10 @@ export async function getPaginatedPosts(limit) {
   }
   return {};
 }
+
+export const getAuthorBySlug = async (slug) => {
+  if (client) {
+    return (await client.fetch(authorslugquery, { slug })) || {};
+  }
+  return {};
+};

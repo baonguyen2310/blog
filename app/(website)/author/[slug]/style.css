@@ -1,0 +1,31 @@
+.strong {
+    font-weight: bold;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.em {
+    font-style: italic;
+}
+
+.author-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.author-img-wrap {
+    flex: 1;
+    margin-left: 20%;
+    margin-right: -10%;
+}
+
+.author-img {
+    width: 60%;
+}
+
+.author-content-wrap {
+    flex: 1;
+    margin-right: 20%;
+}

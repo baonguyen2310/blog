@@ -22,8 +22,8 @@ export default function Navbar(props) {
     },
     {
       label: "Thành viên",
-      href: "https://stablo-pro.web3templates.com/",
-      external: true,
+      href: "/member",
+      //external: true,
       
     },
   ];
