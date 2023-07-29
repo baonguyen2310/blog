@@ -8,14 +8,14 @@
 
 // export const revalidate = 60;
 
-import Archive from "./archive/archive";
+import Home from "./home";
 
 import { getPaginatedPosts } from "@/lib/sanity/client";
 
 const POSTS_PER_PAGE = 6;
 
-export default async function ArchivePage() {
+export default async function HomePage() {
   const posts = await getPaginatedPosts(POSTS_PER_PAGE);
-  return <Archive posts={posts} />;
+  return <Home posts={posts} />;
 }
 

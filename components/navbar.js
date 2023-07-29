@@ -36,8 +36,8 @@ export default function Navbar(props) {
     },
     {
       label: "DFO Summer Camp",
-      href: "https://web3templates.com/templates/stablo-minimal-blog-website-template",
-      external: true,
+      href: "/post/dfo-summer-camp",
+      //external: true,
     },
     {
       label: "Liên hệ",
