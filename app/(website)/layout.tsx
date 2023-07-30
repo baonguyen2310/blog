@@ -14,14 +14,14 @@ export async function sharedMetaData(params) {
     title: {
       default:
         settings?.title ||
-        "Stablo - Blog Template for Next.js & Sanity CMS",
-      template: "%s | Stablo"
+        "DFO",
+      template: "%s | DFO"
     },
     description:
       settings?.description ||
-      "Stablo - popular open-source next.js and sanity blog template",
-    keywords: ["Next.js", "Sanity", "Tailwind CSS"],
-    authors: [{ name: "Surjith" }],
+      "DFO Tay Ninh",
+    keywords: ["DFO"],
+    authors: [{ name: "Bao Nguyen" }],
     canonical: settings?.url,
     openGraph: {
       images: [
@@ -35,7 +35,7 @@ export async function sharedMetaData(params) {
       ]
     },
     twitter: {
-      title: settings?.title || "Stablo Template",
+      title: settings?.title || "DFO Tay Ninh",
       card: "summary_large_image"
     },
     robots: {
