@@ -12,4 +12,4 @@ export default async function ArchivePage() {
   return <Member authors={authors} />;
 }
 
-export const revalidate = 10;
+export const revalidate = 1;

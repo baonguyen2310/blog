@@ -16,4 +16,4 @@ export default async function AuthorDefault({ params }) {
   return <AuthorPage author={author} />;
 }
 
-export const revalidate = 10;
+export const revalidate = 1;

@@ -6,4 +6,4 @@ export default async function ContactPage() {
   return <Contact settings={settings} />;
 }
 
-export const revalidate = 10;
+export const revalidate = 1;

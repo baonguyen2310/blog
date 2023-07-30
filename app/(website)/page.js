@@ -19,4 +19,4 @@ export default async function HomePage() {
   return <Home posts={posts} />;
 }
 
-export const revalidate = 10;
+export const revalidate = 1;
