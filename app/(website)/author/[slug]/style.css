@@ -43,3 +43,13 @@
     color: #fef08a !important;
     text-shadow: 0 20px 50px #5c5c16;
 }
+
+/* MOBILE */
+@media screen and (max-width: 576px) {
+    .author-img-wrap {
+        margin-left: 5%;
+    }
+    .author-content-wrap {
+        margin-right: 5%;
+    }
+}

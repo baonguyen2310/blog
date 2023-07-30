@@ -107,3 +107,20 @@
     transform-origin: right;
   }
 }
+
+
+/* MOBILE */
+@media screen and (max-width: 576px) {
+  .gold-table-container {
+    display: flex !important;
+    flex-direction: column;
+  }
+
+  .gold-table-container > div {
+    margin-top: 5%;
+  }
+
+  #author_index_1 {
+    transform: translateY(0);
+  }
+}
