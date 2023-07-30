@@ -11,8 +11,8 @@ import { ChevronDownIcon } from "@heroicons/react/24/solid";
 import { myLoader } from "@/utils/all";
 import { getSettings } from "@/lib/sanity/client";
 
-export default async function Navbar(props) {
-  const setting = await getSettings();
+export default function Navbar(props) {
+  const settings = props;
   const leftmenu = [
     {
       label: "Trang chủ",
@@ -37,8 +37,8 @@ export default async function Navbar(props) {
       // badge: "new"
     },
     {
-      label: setting.event || "Sự kiện",
-      href: setting.eventURL || "/",
+      label: settings.event || "Sự kiện",
+      href: settings.eventURL || "/",
       //external: true,
     },
     {
