@@ -24,13 +24,22 @@ export default function Author({author}) {
             )}
         </div>
         <div className={`author-content-wrap`}>
-          <h1 className={`text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug author_gold_${author.isGoldTable}`}>
-            {author.name}
-          </h1>
-          <p className={`text-brand-primary mb-3 mt-2 text-center font-semibold tracking-tight dark:text-white author_gold_${author.isGoldTable}`}>
-            {author.position}
-          </p>
-          <p className={`text-gray-800 dark:text-gray-300 text-justify author_gold_${author.isGoldTable}`}>
+          <div className="author-header-wrap">
+            <div className="author-header-img-wrap">
+              {imageProps && (
+                <div className="author-header-img" style={{ backgroundImage: `url(${imageProps.src})` }}></div>
+              )}
+            </div>
+            <div className="author-header-text">
+              <h1 className={`text-brand-primary mb-3 mt-2 text-center text-3xl font-semibold tracking-tight dark:text-white lg:text-4xl lg:leading-snug author_gold_${author.isGoldTable}`}>
+              {author.name}
+              </h1>
+              <p className={`text-brand-primary mb-3 mt-2 text-center font-semibold tracking-tight dark:text-white author_gold_${author.isGoldTable}`}>
+                {author.position}
+              </p>
+              </div>
+          </div>
+          <p className={`text-gray-800 dark:text-gray-300 text-justify author_bio author_gold_${author.isGoldTable}`}>
             <br />
             {author.bio.map((bioItem) => (
               <>

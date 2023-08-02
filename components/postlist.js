@@ -5,6 +5,7 @@ import { urlForImage } from "@/lib/sanity/image";
 import { parseISO, format } from "date-fns";
 import { PhotoIcon } from "@heroicons/react/24/outline";
 import CategoryLabel from "@/components/blog/category";
+import '../styles/tailwind.css';
 
 export default function PostList({
   post,
@@ -23,16 +24,16 @@ export default function PostList({
     <>
       <div
         className={cx(
-          "group cursor-pointer",
+          "group cursor-pointer post-custom",
           minimal && "grid gap-10 md:grid-cols-2"
         )}>
         <div
           className={cx(
-            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105   dark:bg-gray-800"
+            " overflow-hidden rounded-md bg-gray-100 transition-all hover:scale-105 dark:bg-gray-800 post-custom"
           )}>
           <Link
             className={cx(
-              "relative block",
+              "relative block post-custom",
               aspect === "landscape"
                 ? "aspect-video"
                 : aspect === "custom"
@@ -51,12 +52,12 @@ export default function PostList({
                 })}
                 alt={post.mainImage.alt || "Thumbnail"}
                 priority={preloadImage ? true : false}
-                className="object-cover transition-all"
+                className="object-cover transition-all post-custom"
                 fill
                 sizes="(max-width: 768px) 30vw, 33vw"
               />
             ) : (
-              <span className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-gray-200">
+              <span className="absolute left-1/2 top-1/2 h-16 w-16 -translate-x-1/2 -translate-y-1/2 text-gray-200 post-custom">
                 <PhotoIcon />
               </span>
             )}

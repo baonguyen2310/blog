@@ -26,3 +26,13 @@ body {
     /* background:linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C); */
     color: #fef08a !important;
 }
+
+@media screen and (max-width: 576px) {
+    .container-custom {
+        padding-left: 0 !important;
+        margin-left: 5%;
+    }
+    .post-custom {
+        width: 90vw !important;
+    }
+}
