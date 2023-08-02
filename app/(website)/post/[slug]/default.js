@@ -22,10 +22,9 @@ export default function Post(props) {
     ? urlForImage(post?.mainImage)
     : null;
 
-  const AuthorimageProps = post?.author?.image
-    ? urlForImage(post.author.image)
-    : null;
-
+  // post.authors.map((author) => {
+  //   console.log(author.slug);
+  // })
   return (
     <>
       <Container className="!pt-0">
@@ -38,39 +37,45 @@ export default function Post(props) {
             {post.title}
           </h1>
 
-          <div className="mt-3 flex justify-center space-x-3 text-gray-500 ">
+          <div className="mt-3 flex flex-col items-center justify-center space-x-3 text-gray-500 ">
             <div className="flex items-center gap-3">
-              <div className="relative h-10 w-10 flex-shrink-0">
-                {AuthorimageProps && (
-                  <Link href={`/author/${post.author.slug.current}`}>
-                    <Image
-                      src={AuthorimageProps.src}
-                      alt={post?.author?.name}
-                      className="rounded-full object-cover"
-                      fill
-                      sizes="40px"
-                    />
-                  </Link>
-                )}
-              </div>
-              <div>
-                <p className="text-gray-800 dark:text-gray-400">
-                  <Link href={`/author/${post.author.slug.current}`}>
-                    {post.author.name}
-                  </Link>
-                </p>
-                <div className="flex items-center space-x-2 text-sm">
-                  <time
-                    className="text-gray-500 dark:text-gray-400"
-                    dateTime={post?.publishedAt || post._createdAt}>
-                    {format(
-                      parseISO(post?.publishedAt || post._createdAt),
-                      "MMMM dd, yyyy"
+              {post.authors.map((author) => {
+              return (
+                <div className="flex items-center gap-3" key={author._id}>
+                  <div className="relative h-10 w-10 flex-shrink-0">
+                    {(
+                      <Link href={`/author/${author.slug.current}`}>
+                        <Image
+                          src={urlForImage(author.image).src}
+                          alt={author.name}
+                          className="rounded-full object-cover"
+                          fill
+                          sizes="40px"
+                        />
+                      </Link>
                     )}
-                  </time>
-                  <span>· {post.estReadingTime || "5"} min read</span>
+                  </div>
+                  <div>
+                    <p className="text-gray-800 dark:text-gray-400">
+                      <Link href={`/author/${author.slug.current}`}>
+                        {author.name}
+                      </Link>
+                    </p>
+                  </div>
                 </div>
-              </div>
+              )
+              })}
+            </div>
+            <div className="flex items-center space-x-2 text-sm">
+              <time
+                className="text-gray-500 dark:text-gray-400"
+                dateTime={post?.publishedAt || post._createdAt}>
+                {format(
+                  parseISO(post?.publishedAt || post._createdAt),
+                  "MMMM dd, yyyy"
+                )}
+              </time>
+              <span>· {post.estReadingTime || "5"} min read</span>
             </div>
           </div>
         </div>
@@ -91,17 +96,23 @@ export default function Post(props) {
 
       <Container>
         <article className="mx-auto max-w-screen-md ">
-          <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600">
+          <div className="prose mx-auto my-3 dark:prose-invert prose-a:text-blue-600" style={{textAlign: "justify"}}>
             {post.body && <PortableText value={post.body} />}
           </div>
           <div className="mb-7 mt-7 flex justify-center">
             <Link
-              href="/"
+              href="/archive"
               className="bg-brand-secondary/20 rounded-full px-5 py-2 text-sm text-blue-600 dark:text-blue-500 ">
               ← View all posts
             </Link>
           </div>
-          {post.author && <AuthorCard author={post.author} />}
+          {
+            post.authors.map((author) => {
+              return (
+                <AuthorCard key={author._id} author={author} />
+              )
+            })
+          }
         </article>
       </Container>
     </>

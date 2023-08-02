@@ -16,6 +16,7 @@ const POSTS_PER_PAGE = 6;
 
 export default async function HomePage() {
   const posts = await getPaginatedPosts(POSTS_PER_PAGE);
+  //console.log(posts[0].authors[1].name);
   return <Home posts={posts} />;
 }
 

@@ -59,6 +59,7 @@ export default function Post({ posts: initialposts }) {
   const handlePrevPage = () => {
     router.push(`/archive?page=${pageIndex - 1}`);
   };
+  //console.log(posts[0].authors[1].name);
 
   return (
     <>
